@@ -1,0 +1,7 @@
+nome, 
+setor, 
+cargo, 
+dia, 
+hora,
+motivo,
+assinatura do funcionário e do responsável do setor

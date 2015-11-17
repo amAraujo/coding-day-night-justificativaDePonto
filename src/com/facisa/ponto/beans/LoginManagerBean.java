@@ -1,23 +1,23 @@
-package com.facisa.protocolo.beans;
+package com.facisa.ponto.beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import com.facisa.protocolo.model.User;
+import com.facisa.ponto.model.Usuario;
 
 @ManagedBean(name="loginMgmtBean")
 @RequestScoped
 public class LoginManagerBean {
 	
-	private User user = new User();
+	private Usuario user = new Usuario();
 	
 	private boolean incorrect = false;
 
-	public User getUser() {
+	public Usuario getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Usuario user) {
 		this.user = user;
 	}
 
@@ -31,7 +31,7 @@ public class LoginManagerBean {
 	
 	public String login() {
 		
-		if(user.getUsername().equals("ruan")&&user.getPassword().equals("1234")){
+		if(user.getLogin().equals("ruan")&&user.getSenha().equals("1234")){
 			
 			return "correct";
 		}

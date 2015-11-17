@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login</title>
+	
+	<style type="text/css">
+			.ui-widget {font-size: 10px; !important;}
+	</style>
+</h:head>
+
+
+
+<h:body>
+
+	<p:dialog
+		header="Justifica Falta - Efetue Login"
+		visible="true" resizable="false" draggable="false" showEffect="slide"
+		minWidth="300" width="300" position="center" widgetVar="modalLogin"
+		modal="false" closable="false">
+
+		<center>
+			<h:outputText id="msgerro" value="Usuário e/	ou senha inválidos!"
+				rendered="#{loginMgmtBean.incorrect}"
+				style="color:darkred; font-size: 14px; padding-bottom: 10px;" />
+				
+			<h:form action="loginFormId">
+			
+			<h:panelGrid columns="2" cellpadding="3" style="font-weight: bold;">
+
+					<h:outputLabel value="* Usuário:" />
+					<h:inputText size="15" value="#{loginMgmtBean.user.username}"></h:inputText>
+					
+					<h:outputLabel  value="* Senha:" />
+					<h:inputSecret size="15" value="#{loginMgmtBean.user.password}" name="inTxtPasswordNm"></h:inputSecret>
+
+				</h:panelGrid>
+				
+				<h:commandButton  update="msgerro" id="btnLoginId" value="Login" action="#{loginMgmtBean.login}"  styleClass="loginPanelBtn"></h:commandButton>
+				
+			</h:form>
+				
+		</center> 
+		
+	</p:dialog>
+
+</h:body>
+
+
+</html>
